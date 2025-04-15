@@ -108,7 +108,6 @@ public class VetorFuncoes {
         int[] vetor = preencherVetor(n, sc);
         bubbleSort(vetor);
 
-        // Contar pares e ímpares
         int qtdPar = 0;
         int qtdImpar = 0;
         for (int num : vetor) {
