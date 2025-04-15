@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Exemplox {
+
+    
+    public static boolean isConsonant(char ch) {
+        return Character.isAlphabetic(ch) && "aeiouAEIOU".indexOf(ch) == -1;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Quantos caracteres você vai digitar? ");
+        int numChar = scanner.nextInt();
+        scanner.nextLine();  // Consumir a linha em branco após o número
+
+        List<String> vetor = new ArrayList<>();
+
+        for (int i = 0; i < numChar; i++) {
+            System.out.print("Digite o " + (i + 1) + "º caractere: ");
+            String caractere = scanner.nextLine();
+            vetor.add(caractere);
+        }
+
+        List<String> consonants = new ArrayList<>();
+
+        for (String charStr : vetor) {
+            char charAt = charStr.charAt(0); // Pegando o primeiro caractere da string
+            if (isConsonant(charAt)) {
+                consonants.add(charStr);
+            }
+        }
+
+        System.out.println("Você digitou " + vetor.size() + " caracteres, dos quais " + consonants.size() + " são consoantes e são elas: " + consonants);
+    }
+}
